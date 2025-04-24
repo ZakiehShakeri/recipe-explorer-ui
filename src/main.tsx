@@ -1,7 +1,7 @@
 import { MagnifyingGlassIcon, PaperPlaneIcon } from "@radix-ui/react-icons";
 
 import { Box, Card, Flex, Heading, IconButton, Inset, Strong, Text, TextField, Theme } from "@radix-ui/themes";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect} from 'react';
 
 type SampleFoodProps = { imageUrl: string, foodName: string, description: string };
@@ -38,6 +38,7 @@ function SampleFoodRow({ sf }: { sf: SampleFoodProps[] }) {
 }
 
 function Root() {
+    const navigate = useNavigate();
     const [sampleFoods, setSampleFoods] = useState([
         { foodName: "Fesenjoon", description: "A beloved Persian dish, celebrated for its sweet, tangy, and nutty flavors.", imageUrl: "images/fesenjoon.jpeg" },
         { foodName: "Ghormeh Sabzi", description: "A Persian herb stew with kidney beans and dried limes.", imageUrl: "images/ghormeh sabzi.jpeg" },
@@ -107,10 +108,7 @@ function Root() {
                                 <form onSubmit={(e) => {
                                     e.preventDefault();
                                     const question = (e.target as HTMLFormElement).question.value;
-                                    if (question) {
-                                        window.location.replace(`?p=recipe&foodName=${encodeURIComponent(question)}`);
-
-                                    }
+                                    navigate(`/recipe?foodName=${encodeURIComponent(question)}`);
                                 }}>
                                     <TextField.Root size={"3"} name="question" placeholder="Ask your questions here…">
                                         <TextField.Slot>
