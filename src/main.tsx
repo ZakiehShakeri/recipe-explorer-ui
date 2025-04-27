@@ -93,7 +93,7 @@ function Root() {
                     <Card size={"2"}>
                         <Flex direction={"column"} gap={"4"} align={"stretch"} justify={"center"}>
 
-                            <Flex direction={"column"} gap={"4"} align={"start"} justify={"start"} flexGrow={"1"} flexBasis={"200px"}>
+                            <Flex direction={"column"} gap={"4"} align={"start"} justify={"start"} flexGrow={"1"} flexBasis={"50px"}>
                                 <Box>
                                     <Text as="p" size="4" color="gray" >
                                         Hi! I'm your cooking assistant. Enter the name of a dish you'd like to explore... 😊

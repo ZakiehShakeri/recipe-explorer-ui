@@ -52,7 +52,7 @@ function IngredientHoverCard({ ing }: { ing: Ingredient }) {
             </Inset>
         </Box>
         <Text size="2" as="p">
-            <Strong>{ing.name}</Strong>{ing.description}
+            <Strong>{ing.name}</Strong>{' '}{ing.description}
         </Text>
     </Flex>
 
