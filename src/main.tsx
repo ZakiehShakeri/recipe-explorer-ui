@@ -96,9 +96,7 @@ function Root() {
                             <Flex direction={"column"} gap={"4"} align={"start"} justify={"start"} flexGrow={"1"} flexBasis={"200px"}>
                                 <Box>
                                     <Text as="p" size="4" color="gray" >
-                                        Hi! I'm your cooking assistant. Ask me about new recipes you want to explore
-
-                                        or any other questions you may have 😊.
+                                        Hi! I'm your cooking assistant. Enter the name of a dish you'd like to explore... 😊
                                     </Text>
                                     <br />
                                 </Box>

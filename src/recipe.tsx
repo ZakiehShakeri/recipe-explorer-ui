@@ -1,6 +1,8 @@
-import { MagnifyingGlassIcon, PaperPlaneIcon } from "@radix-ui/react-icons";
-import { Box, Card, Flex, Heading, HoverCard, IconButton, Inset, Link, Spinner, Strong, Text, TextField, Theme } from "@radix-ui/themes";
+// import { MagnifyingGlassIcon, PaperPlaneIcon } from "@radix-ui/react-icons";
+import { Box, Card, Flex, Heading, HoverCard, Inset, Link, Spinner, Strong, Text, Theme } from "@radix-ui/themes";
+// import { Box, Card, Flex, Heading, HoverCard, IconButton, Inset, Link, Spinner, Strong, Text, TextField, Theme } from "@radix-ui/themes";
 import { useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
 
 type Ingredient = { name: string, amount: string, description: string };
 type RecipeProps = { name: string, description: string, ingredients: Ingredient[], instructions: string[] };
@@ -74,6 +76,7 @@ function ShowIngredient({ ing }: { ing: Ingredient }) {
 
 
 export default function Recipe() {
+    // const navigate = useNavigate();
     const searchParams = new URLSearchParams(window.location.search);
     const foodName = searchParams.get('foodName');
     const [recipe, setRecipe] = useState<RecipeProps | null>(null);
@@ -161,7 +164,7 @@ export default function Recipe() {
 
                     </Text>
 
-                    {/* Search Bar */}
+                    {/* Search Bar
                     <Card size={"2"}>
                         <Flex direction={"column"} gap={"4"} align={"stretch"} justify={"center"}>
 
@@ -174,22 +177,30 @@ export default function Recipe() {
                                 </Box>
 
                             </Flex>
-                            <TextField.Root size={"3"} placeholder="Ask your questions here…">
-                                <TextField.Slot>
-                                    <MagnifyingGlassIcon height="16" width="16" />
-                                </TextField.Slot>
-                                <TextField.Slot>
-                                    <IconButton size="1" variant="ghost">
-                                        <PaperPlaneIcon height="14" width="14" />
-                                    </IconButton>
-                                </TextField.Slot>
-                            </TextField.Root>
-
-                        </Flex>
-                    </Card>
+                            <Box>
+                                <form onSubmit={(e) => {
+                                    e.preventDefault();
+                                    const question = (e.target as HTMLFormElement).question.value;
+                                    navigate(`/recipe?foodName=${encodeURIComponent(question)}`);
+                                }}>
+                                <TextField.Root size={"3"} placeholder="Ask your questions here…">
+                                    <TextField.Slot>
+                                        <MagnifyingGlassIcon height="16" width="16" />
+                                    </TextField.Slot>
+                                    <TextField.Slot>
+                                        <IconButton size="1" variant="ghost">
+                                            <PaperPlaneIcon height="14" width="14" />
+                                        </IconButton>
+                                    </TextField.Slot>
+                                </TextField.Root>
+                            </form>
+                        </Box>
 
                 </Flex>
-            </Theme>
+            </Card> */}
+
         </Flex>
+            </Theme >
+        </Flex >
     );
 }
